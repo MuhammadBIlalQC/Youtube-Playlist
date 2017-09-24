@@ -1,0 +1,39 @@
+﻿
+<div class="row">
+    <div class="col-md-offset-3 col-md-6">
+        <div id="main-player">
+            <script src="https://www.youtube.com/iframe_api" id="player-script">
+            </script>
+        </div> 
+        <br />
+    </div>
+
+    <div class="col-md-3" id="upcoming-music">
+        <h3>Upcoming Music</h3>
+    </div>
+</div>
+<hr />
+
+<div class="row">
+    <div class="col-md-offset-3 col-md-4">
+        <h1>Add a New Song to this Playlist</h1>
+
+        <input type="text" style="margin-left: 60px; height: 29px; width: 250px;" placeholder="Enter a Youtube URL's Video ID" id="findVideoSrc">
+        <input type="button" value="Find" class="btn btn-primary" style="width: 80px;" onclick="findVideo()">
+        <br /> <br />
+
+    </div>
+    <div class="col-md-5" id="search-player-wrapper">
+        <div id="search-player">
+            <script src="https://www.youtube.com/iframe_api" id="player-script">
+            </script>
+        </div>
+        <br />
+        <input type="button" value="Add to Playlist" class="btn btn-primary" style="">
+        <input type="button" value="Cancel" class="btn btn-warning" style="">
+    </div>
+</div>
+<script src="~/js/playlist-script.js">
+</script>
+
+

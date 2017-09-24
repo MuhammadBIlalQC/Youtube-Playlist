@@ -1,0 +1,38 @@
+﻿@model Library
+<div class="row">
+    <div class="col-md-offset-2 col-md-6">
+        <div id="main-player">
+            <script src="https://www.youtube.com/iframe_api" id="player-script">
+            </script>
+        </div>
+    </div>
+    <div class="col-md-3" style="margin-top: 30px;">
+        <label>Video's URL: </label><code id="videoURL">https://www.youtube.com/watch?v=</code> 
+        <br />
+        <br />
+
+        <button class="btn btn-success">
+            Add to Playlist
+        </button>
+        <button class="btn btn-danger">
+            Delete from Library
+        </button>
+        
+    </div>
+</div>
+
+<hr />
+
+<div class="row">
+    <div class="col-md-offset-3">
+        @foreach (Video video in Model.AllMusic)
+        {
+            <div style="display: inline-block; margin: 10px;">
+                <a href="/Library?v=@video.videoID">
+                    <img src="https://img.youtube.com/vi/@video.videoID/default.jpg" />
+                </a>
+            </div>
+        }
+    </div>
+</div>
+
