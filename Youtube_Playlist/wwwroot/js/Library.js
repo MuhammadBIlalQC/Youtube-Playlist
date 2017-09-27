@@ -1,18 +1,10 @@
-﻿var mainPlayer, searchPlayer, addPlayer;
+﻿var mainPlayer;
+
 function onYouTubeIframeAPIReady() {
-    mainPlayer = new YT.Player('main-player', {
+    mainPlayer = new YT.Player('library-player', {
         height: '390',
         width: '640',
         videoId: getQueryString('v'),
-        events: {
-            'onReady': onPlayerReady,
-            'onStateChange': onPlayerStateChange
-        }
-    });
-    addLibPlayer = new YT.Player('addLib-player', {
-        height: '200',
-        width: '400',
-        videoId: 'M7lc1UVf-VE',
         events: {
             'onReady': onPlayerReady,
             'onStateChange': onPlayerStateChange
@@ -33,5 +25,3 @@ function onPlayerStateChange(event) {
 function stopVideo() {
     mainPlayer.stopVideo();
 }
-
-
