@@ -7,8 +7,8 @@ namespace Youtube_Playlist.Models
 {
     public class Playlist
     {
-        public string id { get; private set; }
-        public string name { get; set; }
-        public List<Video> videos = new List<Video>();
+        public string Id { get; private set; }
+        public string Name { get; set; }
+        public List<Video> Videos = new List<Video>();
     }
 }

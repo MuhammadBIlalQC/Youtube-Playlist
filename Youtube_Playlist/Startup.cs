@@ -3,8 +3,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Youtube_Playlist.Models;
-using Youtube_Playlist.Lib;
+
 
 namespace Youtube_Playlist
 {
@@ -48,8 +47,8 @@ namespace Youtube_Playlist
                     defaults: new { controller = "API" });
                 routes.MapRoute(
                     name: "default",
-                    template: "{action=Index}/{id?}",
-                    defaults: new { controller = "Home" });
+                    template: "{action}/{id?}",
+                    defaults: new { controller = "Home", action = "Library" });
             });
         }
     }

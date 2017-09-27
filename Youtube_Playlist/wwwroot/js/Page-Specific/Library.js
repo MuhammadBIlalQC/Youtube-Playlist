@@ -1,17 +1,18 @@
 ﻿var mainPlayer;
 
-function onYouTubeIframeAPIReady() {
+var tag = document.createElement('script');
+tag.src = "https://www.youtube.com/player_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+
+function onYouTubePlayerAPIReady() {
     mainPlayer = new YT.Player('library-player', {
-        height: '390',
+        height: '360',
         width: '640',
-        videoId: getQueryString('v'),
-        events: {
-            'onReady': onPlayerReady,
-            'onStateChange': onPlayerStateChange
-        }
+        videoId: getQueryString('v')
     });
 }
-
 function onPlayerReady(event) {
     //event.target.playVideo();
 }
@@ -25,3 +26,4 @@ function onPlayerStateChange(event) {
 function stopVideo() {
     mainPlayer.stopVideo();
 }
+

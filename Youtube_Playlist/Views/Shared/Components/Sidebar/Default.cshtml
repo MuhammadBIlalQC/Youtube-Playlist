@@ -9,7 +9,9 @@
                 {
                     <li><a href="/Library?v=@item.videoID">@item.Name</a></li>
                 }
-                <li style="margin-top: 10px; margin-bottom: 30px;"><a href="#" data-toggle="modal" data-target="#ModalAddToLibrary" ><span class="glyphicon glyphicon-plus" ></span> Add New Song</a></li>
+                <li style="margin-top: 10px; margin-bottom: 30px;"><a href="#" data-toggle="modal" data-target="#ModalAddToLibrary" >
+                    <span class="glyphicon glyphicon-plus" ></span> Add New Song</a>
+                </li>
             </ul>
         </li>
         <li><a href="#">Quick Find</a>
@@ -20,8 +22,14 @@
         <li><a data-toggle="collapse" href="#" data-target="#playlists">Playlists</a></li>
         <li>
             <ul id="playlists" class="collapse in" style="list-style-type: none">
-                <li><a href="#">Example Playlist 1</a></li>
-                <li><a href="#">New Playlist</a></li>
+                @foreach (Playlist playlist in Model.Playlists)
+                {
+                    <li><a href="/Playlist?pl=@playlist.Name">@playlist.Name</a></li>
+                }
+                <li style="margin-top: 10px; margin-bottom: 30px;"><a href="#" data-toggle="modal" data-target="#ModalAddNewPlaylist">
+                    <span class="glyphicon glyphicon-plus"></span> Add New Playlist</a>
+                </li>
+
             </ul>
         </li>
     </ul>
@@ -29,3 +37,4 @@
 </div>
 
 @Html.Partial("Modals/ModalAddToLibrary")
+@Html.Partial("Modals/ModalAddNewPlaylist")
